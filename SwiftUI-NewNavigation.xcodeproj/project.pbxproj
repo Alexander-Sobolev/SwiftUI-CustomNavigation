@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4172E8E27FC6E67000D5D1D /* LFAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4172E8D27FC6E67000D5D1D /* LFAlert.swift */; };
+		B4172E9027FC6EAD000D5D1D /* LFNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4172E8F27FC6EAD000D5D1D /* LFNavigation.swift */; };
 		B461D2D727FC4E7C00408CCB /* SwiftUI_NewNavigationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461D2D627FC4E7C00408CCB /* SwiftUI_NewNavigationApp.swift */; };
 		B461D2D927FC4E7C00408CCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461D2D827FC4E7C00408CCB /* ContentView.swift */; };
 		B461D2DB27FC4E7D00408CCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B461D2DA27FC4E7D00408CCB /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4172E8D27FC6E67000D5D1D /* LFAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFAlert.swift; sourceTree = "<group>"; };
+		B4172E8F27FC6EAD000D5D1D /* LFNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFNavigation.swift; sourceTree = "<group>"; };
 		B461D2D327FC4E7C00408CCB /* SwiftUI-NewNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-NewNavigation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B461D2D627FC4E7C00408CCB /* SwiftUI_NewNavigationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_NewNavigationApp.swift; sourceTree = "<group>"; };
 		B461D2D827FC4E7C00408CCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				B461D2E827FC4EFD00408CCB /* ScreenView.swift */,
 				B461D2DA27FC4E7D00408CCB /* Assets.xcassets */,
 				B461D2DC27FC4E7D00408CCB /* Preview Content */,
+				B4172E8D27FC6E67000D5D1D /* LFAlert.swift */,
+				B4172E8F27FC6EAD000D5D1D /* LFNavigation.swift */,
 			);
 			path = "SwiftUI-NewNavigation";
 			sourceTree = "<group>";
@@ -164,6 +170,8 @@
 				B461D2D927FC4E7C00408CCB /* ContentView.swift in Sources */,
 				B461D2D727FC4E7C00408CCB /* SwiftUI_NewNavigationApp.swift in Sources */,
 				B461D2E727FC4ED600408CCB /* LFScreen.swift in Sources */,
+				B4172E9027FC6EAD000D5D1D /* LFNavigation.swift in Sources */,
+				B4172E8E27FC6E67000D5D1D /* LFAlert.swift in Sources */,
 				B461D2E927FC4EFD00408CCB /* ScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

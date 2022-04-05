@@ -8,34 +8,6 @@
 import SwiftUI
 import ComposableNavigator
 
-
-class LFAlert: ObservableObject {
-  @Published var showAlert: Bool = false
-  @Published var alert: Alert?
-  static let shared = LFAlert()
-  
-  static func showAlert(alert: Alert) {
-    LFAlert.shared.alert = alert
-    LFAlert.shared.showAlert = true
-  }
-}
-
-class LFNavigation: ObservableObject {
-  @Published var navigator: Navigator
-  @Published var dataSource: Navigator.Datasource
-  
-  
-  init(dataSource: Navigator.Datasource) {
-    self.dataSource = dataSource
-    self.navigator = Navigator(dataSource: dataSource)
-  }
-  
-  static let shared = LFNavigation(dataSource: Navigator.Datasource(root: ContentView().screen))
-  
-}
-
-
-
 public struct LFRoot<Builder: PathBuilder>: View {
   @ObservedObject private var dataSource: Navigator.Datasource
   private let navigator: Navigator
@@ -58,13 +30,13 @@ public struct LFRoot<Builder: PathBuilder>: View {
         pathBuilder.build(
           pathElement: rootPathComponent
         )
-          .alert(isPresented: $showAlert) {
-            if let alert = LFAlert.shared.alert {
-              return alert
-            }
-            return Alert(title: Text(""))
-            
+        .alert(isPresented: $showAlert) {
+          if let alert = LFAlert.shared.alert {
+            return alert
           }
+          return Alert(title: Text(""))
+          
+        }
       }
       .onReceive(LFAlert.shared.$showAlert, perform: { isShowAlert in
         showAlert = isShowAlert

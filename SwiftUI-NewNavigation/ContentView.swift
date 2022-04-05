@@ -9,7 +9,6 @@ import SwiftUI
 import ComposableNavigator
 
 
-
 struct ContentView: ScreenView {
   var navigationBuilder: AnyPathBuilder = .init(erasing: SecondView.builder)
   
@@ -22,11 +21,17 @@ struct ContentView: ScreenView {
       }
       
       Button {
+        self.openModal(with: SecondView().asModalScreen)
+      } label: {
+        Text("ShowModal")
+      }
+      
+      Button {
         
         //Так удобнее со вьюхи
         self.showAlert(alert: Alert(title: Text("Test alert")))
         // Это можем вызвать откуда угодно
-//        LFAlert.showAlert(alert: Alert(title: Text("Checking")))
+        //LFAlert.showAlert(alert: Alert(title: Text("Checking")))
       } label: {
         Text("Show alert")
       }
@@ -85,6 +90,12 @@ struct ThirdView: ScreenView {
         self.dismiss()
       } label: {
         Text("Dismiss screen")
+      }
+      
+      Button {
+        self.dismiss(to: ContentView())
+      } label: {
+        Text("Dismiss to screen")
       }
       
       Button {

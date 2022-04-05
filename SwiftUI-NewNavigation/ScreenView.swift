@@ -19,6 +19,11 @@ extension ScreenView {
       self.navigationBuilder
     }
   }
+  
+  var asModalScreen: LFScreen<Self> {
+    return selfScreen
+  }
+  
   var screen: AnyScreen {
     selfScreen.eraseToAnyScreen()
   }
@@ -33,9 +38,25 @@ extension ScreenView {
     }
   }
   
+  func openModal<SomeType: View>(with destinationScreen: LFScreen<SomeType>) {
+    let screen = destinationScreen
+    screen.presentationStyle = .sheet(allowsPush: true)
+    go(to: screen.eraseToAnyScreen())
+  }
+  
   func dismiss() {
     if let rootPathComponent = LFNavigation.shared.dataSource.path.current.last {
       LFNavigation.shared.navigator.dismiss(screen: rootPathComponent.content)
+    }
+  }
+  
+  func dismiss<Content: View>(to screen: Content) {
+    let rootPathComponent = LFNavigation.shared.dataSource.path.current
+    for navigationScreen in rootPathComponent {
+      if navigationScreen.content.is(LFScreen<Content>.self) {
+        LFNavigation.shared.navigator.goBack(to: navigationScreen.content)
+        break
+      }
     }
   }
   
@@ -51,7 +72,4 @@ extension ScreenView {
       LFNavigation.shared.navigator.goBack(to: rootPathComponent.content)
     }
   }
-  
-  
-  
 }
