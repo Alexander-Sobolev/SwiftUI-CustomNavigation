@@ -11,7 +11,10 @@ import SwiftUI
 struct SwiftUI_NewNavigationApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+          LFRoot(
+            dataSource: LFNavigation.shared.dataSource,
+            pathBuilder: ContentView.builder
+          )
         }
     }
 }
